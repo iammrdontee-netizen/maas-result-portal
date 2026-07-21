@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Principal Menu</h2>
+            <ul>
+                <li><a href="#" onclick="showTab('results-tab')">Approve Results</a></li>
+            </ul>
+            <button onclick="logout()" class="btn btn-danger" style="width: 100%; margin-top: 20px;">Logout</button>
+        </div>
+        
+        <div class="main-content">
+            <header>
+                <h1>Welcome, <span id="principal-name"></span></h1>
+            </header>
+            
+            <div id="results-tab" class="tab active">
+                <h2>Approve Results</h2>
+                <table id="principal-results-table">
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Class</th>
+                            <th>Subject</th>
+                            <th>Score</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

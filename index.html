@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAAS MODERN Portal - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MAAS Modern International Groups of School Portal</h1>
+            <nav>
+                <a href="#" onclick="showLogin()">Login</a>
+                <a href="#" onclick="showSignup()">Signup</a>
+            </nav>
+        </header>
+        
+        <main id="main-content">
+            <!-- Login Form -->
+            <div id="login-form" class="auth-form">
+                <h2>Login</h2>
+                <form onsubmit="handleLogin(event)">
+                    <input type="text" id="login-username" placeholder="Username" required>
+                    <input type="password" id="login-password" placeholder="Password" required>
+                    <select id="login-role">
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="principal">Principal</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" onclick="showSignup()">Sign up</a></p>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signup-form" class="auth-form" style="display: none;">
+                <h2>Signup</h2>
+                <form onsubmit="handleSignup(event)">
+                    <input type="text" id="signup-username" placeholder="Username" required>
+                    <input type="email" id="signup-email" placeholder="Email" required>
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                    <select id="signup-role">
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                    </select>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 MAAS Modern Groups of School. All rights reserved.(D'Tee tech developer)</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Admin Menu</h2>
+            <ul>
+                <li><a href="#" onclick="showTab('dashboard-tab')">Dashboard</a></li>
+                <li><a href="#" onclick="showTab('students-tab')">Manage Students</a></li>
+                <li><a href="#" onclick="showTab('teachers-tab')">Manage Teachers</a></li>
+                <li><a href="#" onclick="showTab('classes-tab')">Manage Classes</a></li>
+                <li><a href="#" onclick="showTab('results-tab')">Results</a></li>
+            </ul>
+            <button onclick="logout()" class="btn btn-danger" style="width: 100%; margin-top: 20px;">Logout</button>
+        </div>
+        
+        <div class="main-content">
+            <header>
+                <h1>Welcome, <span id="admin-name"></span></h1>
+            </header>
+            
+            <!-- Dashboard -->
+            <div id="dashboard-tab" class="tab active">
+                <div class="card">
+                    <h2>School Statistics</h2>
+                    <p>Total Students: <strong id="total-students">0</strong></p>
+                    <p>Total Teachers: <strong id="total-teachers">0</strong></p>
+                    <p>Total Classes: <strong id="total-classes">0</strong></p>
+                </div>
+            </div>
+            
+            <!-- Students -->
+            <div id="students-tab" class="tab">
+                <h2>Manage Students</h2>
+                <button onclick="addStudent()" class="btn btn-primary">Add New Student</button>
+                <table id="students-list">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Class</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            
+            <!-- Teachers -->
+            <div id="teachers-tab" class="tab">
+                <h2>Manage Teachers</h2>
+                <button onclick="addTeacher()" class="btn btn-primary">Add New Teacher</button>
+                <table id="teachers-list">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Subject</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            
+            <!-- New: Classes Management -->
+            <div id="classes-tab" class="tab">
+                <h2>Manage Classes</h2>
+                <button onclick="addClass()" class="btn btn-primary">Add New Class</button>
+                <table id="classes-list">
+                    <thead>
+                        <tr>
+                            <th>Class Name</th>
+                            <th>Assigned Teacher</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            
+            <!-- Results -->
+            <div id="results-tab" class="tab">
+                <h2>All Results</h2>
+                <table id="admin-results-table">
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Subject</th>
+                            <th>Score</th>
+                            <th>Approved</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>

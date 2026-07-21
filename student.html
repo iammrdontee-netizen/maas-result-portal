@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Student Menu</h2>
+            <ul>
+                <li><a href="#" onclick="showTab('results-tab')">My Results</a></li>
+                <li><a href="#" onclick="showTab('announcements-tab')">Announcements</a></li>
+                <li><a href="#" onclick="showTab('notes-tab')">Class Notes</a></li>
+                <li><a href="#" onclick="showTab('register-tab')">Register Class</a></li>
+            </ul>
+            <button onclick="logout()" class="btn btn-danger" style="width: 100%; margin-top: 20px;">Logout</button>
+        </div>
+        
+        <div class="main-content">
+            <header>
+                <h1>Welcome, <span id="student-name"></span></h1>
+                <p>Class: <strong id="student-class"></strong></p>
+            </header>
+            
+            <!-- Results Tab -->
+            <div id="results-tab" class="tab active">
+                <h2>My Academic Results</h2>
+                <div class="filter">
+                    <select id="student-class-filter" onchange="filterStudentResults()">
+                        <option value="">All Classes</option>
+                    </select>
+                </div>
+                <table id="results-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Score</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            
+            <!-- Announcements Tab -->
+            <div id="announcements-tab" class="tab">
+                <h2>School Announcements</h2>
+                <div id="announcements-list"></div>
+            </div>
+            
+            <!-- Notes Tab -->
+            <div id="notes-tab" class="tab">
+                <h2>Class Notes</h2>
+                <div class="filter">
+                    <select id="student-teacher-filter" onchange="filterStudentNotes()">
+                        <option value="">All Teachers</option>
+                    </select>
+                </div>
+                <div id="notes-list"></div>
+            </div>
+            
+            <!-- New: Class Registration Tab -->
+            <div id="register-tab" class="tab">
+                <h2>Register / Change Class</h2>
+                <div class="card">
+                    <label>Select Class:</label>
+                    <select id="register-class-select" style="width:100%; padding:10px; margin:10px 0;"></select>
+                    <button onclick="registerStudentClass()" class="btn btn-primary">Register for Class</button>
+                </div>
+                <p><small>Note: Your current class will be updated after registration.</small></p>
+            </div>
+        </div>
+    </div>
+  
+</body>
+</html>

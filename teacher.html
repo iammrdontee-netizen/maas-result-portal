@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Teacher Menu</h2>
+            <ul>
+                <li><a href="#" onclick="showTab('upload-tab')">Upload Results</a></li>
+                <li><a href="#" onclick="showTab('results-tab')">View Results</a></li>
+                <li><a href="#" onclick="showTab('notes-tab')">Post Notes</a></li>
+            </ul>
+            <button onclick="logout()" class="btn btn-danger" style="width: 100%; margin-top: 20px;">Logout</button>
+        </div>
+        
+        <div class="main-content">
+            <header>
+                <h1>Welcome, <span id="teacher-name"></span></h1>
+            </header>
+            
+            <!-- Upload Results -->
+            <div id="upload-tab" class="tab active">
+                <h2>Upload Student Result</h2>
+                <div class="card">
+                    <input type="number" id="upload-student" placeholder="Student ID" style="width:100%; padding:10px; margin:5px 0;">
+                    <input type="text" id="upload-subject" placeholder="Subject" style="width:100%; padding:10px; margin:5px 0;">
+                    <input type="number" id="upload-score" placeholder="Score" style="width:100%; padding:10px; margin:5px 0;">
+                    <input type="text" id="upload-class" placeholder="Class (e.g. jss1)" style="width:100%; padding:10px; margin:5px 0;">
+                    <button onclick="uploadResult()" class="btn btn-primary">Upload Result</button>
+                </div>
+            </div>
+            
+            <!-- View Results -->
+            <div id="results-tab" class="tab">
+                <h2>Student Results</h2>
+                <table id="teacher-results-table">
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Class</th>
+                            <th>Subject</th>
+                            <th>Score</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            
+            <!-- Post Notes -->
+            <div id="notes-tab" class="tab">
+                <h2>Post Class Note</h2>
+                <div class="card">
+                    <input type="text" id="note-title" placeholder="Note Title" style="width:100%; padding:10px; margin:5px 0;">
+                    <input type="text" id="note-class" placeholder="Class (e.g. jss1)" style="width:100%; padding:10px; margin:5px 0;">
+                    <button onclick="postClassNote()" class="btn btn-primary">Post Note</button>
+                </div>
+                <h3>Posted Notes</h3>
+                <div id="teacher-notes-list"></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
